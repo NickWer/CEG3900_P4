@@ -1,0 +1,12 @@
+\documentclass[11pt]{article}
+\usepackage{hyperref}
+\title{P4 Submission}
+\author{Nick Werle}
+\date{\today}
+\begin{document}
+	\maketitle
+	\section{Task 1}
+	My program works well, with no bugs or crashes that I am aware of. To test, I made the file many times larger (copy and pasted the original 240k log until it was 300MB) and it still ran well. Additionally, using a script called memusg from \url{https://gist.github.com/netj/526585}, I was able to verify that the memory consumption of my implementation did not noticeably grow with the size of the input.
+	
+	I developed this program by creating a package for parsing, which will hopefully be trivial enough to modify for the later parts of the assignment. Using streams and regex it searches each line of the log against the regex string and extracts the IP address if possible. I think the callback that I put in place will be valuable for the later portions, and what code there is will be simple to modify.
+\end{document}
