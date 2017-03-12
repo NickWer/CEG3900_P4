@@ -30,21 +30,32 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String inputFile = args[0];
-        String outputFile = args[1];
-        Integer wordCountToFilter = Integer.parseInt(args[2]);
+        String inputFile;
+        String outputFile;
+        Integer wordCountToFilter;
+        FileWriter writer;
+        Stream<String> bookURLs;
+
+
+        try {
+            inputFile = args[0];
+            outputFile = args[1];
+            wordCountToFilter = Integer.parseInt(args[2]);
+        } catch (Exception ex) {
+            System.out.println("Invalid input supplied.\nUsage: main.jar inputFile outputFile n");
+            ex.printStackTrace();
+            return;
+        }
 
         System.out.println("Reading from " + inputFile);
         System.out.println("Writing to " + outputFile);
         BookListParser parser = new BookListParser();
-        FileWriter writer;
-        Stream<String> bookURLs;
 
         try {
             writer = new FileWriter(outputFile, false);
             bookURLs = Files.lines(Paths.get(inputFile));
         } catch (IOException e) {
-            System.out.println("Error opening destination file, terminating");
+            System.out.println("Error opening either input or destination file, terminating.");
             e.printStackTrace();
             return;
         }

@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 public class BookListParser {
     public List<AbstractMap.SimpleEntry<String, Integer>> parseList(Stream<String> bookList) {
         List<AbstractMap.SimpleEntry<String, Integer>> sortable = new ArrayList<>();
-        Pattern oneWord = Pattern.compile("[a-zA-Z]+");
+        Pattern oneWord = Pattern.compile("[a-zA-Z]+[\'?a-zA-Z]");
         bookList.map(WebStream::loadPage) // each URL is now a stream of lines of text
                 .flatMap(book ->
                         book.flatMap(line -> {
