@@ -1,0 +1,3 @@
+[submodule "memusg"]
+	path = memusg
+	url = git@gist.github.com:526585.git
