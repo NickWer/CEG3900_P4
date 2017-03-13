@@ -1,0 +1,6 @@
+[submodule "526585"]
+	path = 526585
+	url = git@gist.github.com:526585.git
+[submodule "memusg"]
+	path = memusg
+	url = git@gist.github.com:526585.git
