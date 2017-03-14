@@ -97,6 +97,32 @@ This android application went much faster than the previous. IT seems to work co
 	\begin{figure}[ht]
 		\includegraphics[width=3in]{img/t4s4.png}
 		\centering
-		\caption{The result, which on my phone took 10+ seconds to appear.}
+		\caption{The result, which on my phone took 20+ seconds to appear.}
 	\end{figure}
+	
+	\section{Task 5}
+	Figures 9-12 show my revised Task 4 submission screenshots. 
+	
+	I found this to be extremely easy to do because my parser used streams right from the beginning (as soon as it loads the book list), and in order to make my task 4 submission work, I already had to remove the processing from the main thread onto a secondary one. At that point, it's basically just a matter of throwing is a .parallel() call where it makes sense to do so. Initially I took your instructions of "using as much concurrency as possible", however, not surprisingly, I found that repeatedly parallelizing the stream actually hindered performance. Once I changed it such that it was only parallelized \textit{per book} (as opposed to per line, at the collection phase, etc.), I saw the expected performance improvements.
+	
+		\begin{figure}[ht]
+			\includegraphics[width=3in]{img/t5s1.png}
+			\centering
+			\caption{Task 5: Home screen}
+		\end{figure}
+		\begin{figure}[ht]
+			\includegraphics[width=3in]{img/t5s2.png}
+			\centering
+			\caption{Task 5: Showing the placeholder and number input}
+		\end{figure}
+		\begin{figure}[ht]
+			\includegraphics[width=3in]{img/t5s3.png}
+			\centering
+			\caption{Task 5: Simple information displayed while the user waits}
+		\end{figure}
+		\begin{figure}[ht]
+			\includegraphics[width=3in]{img/t5s4.png}
+			\centering
+			\caption{Task 5: The result, which on my phone took about 10-15 seconds to appear (5-10 second improvement!).}
+		\end{figure}
 \end{document}
