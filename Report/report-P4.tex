@@ -1,5 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage{hyperref}
+\usepackage{graphicx}
+
 \title{P4 Submission}
 \author{Nick Werle}
 \date{\today}
@@ -10,6 +12,32 @@
 	
 	I developed this program by creating a package for parsing, which will hopefully be trivial enough to modify for the later parts of the assignment. Using streams and regex it searches each line of the log against the regex string and extracts the IP address if possible. I think the callback that I put in place will be valuable for the later portions, and what code there is will be simple to modify.
 	\section{Task 2}
+	See figures 1-4 for the screenshots of this application running.
+	
+	My application works well enough. One thing that could be improved is that, when clicking either processes button, the calculation is run on the UI thread and so the application hangs while it processes the log.
+	
+	Building this application wasn't too terrible but also certainly came with many minor issues. Passing data between activities is surprisingly difficult if you actually want to do it the right way, and need to send more than a simple integer or string. I decided that this wasn't worth figuring out given my somewhat limited time and the simplicity of the application, so I just used a global static class to hold the Stream<> I wanted to pass.
+	
+	\begin{figure}[ht]
+		\includegraphics[width=3in]{img/t2s1.png}
+		\centering
+		\caption{Home screen}
+	\end{figure}
+	\begin{figure}[ht]
+		\includegraphics[width=3in]{img/t2s2.png}
+		\centering
+		\caption{Some text in the log textbox (It is multiline)}
+	\end{figure}
+	\begin{figure}[ht]
+	\includegraphics[width=3in]{img/t2s3.png}
+	\centering
+	\caption{Example output from a nonsense input}
+	\end{figure}
+	\begin{figure}[ht]
+	\includegraphics[width=3in]{img/t2s4.png}
+	\centering
+	\caption{Example output from the provided input. You can kind of see that the lower portion of text is scrollable (the scrollbar is visible), but it's hard to capture that in a screenshot.}
+	\end{figure}
 	\section{Task 3}
 	The source for this program is available in the Task 3 folder. I used the following input to test my program:
 \begin{verbatim}
@@ -42,4 +70,6 @@ My solution works well, as best I can tell. It does not attempt to strip out htm
 The experience of developing this was overall not very different from Task 1, though the optimization phase did strain my familiarity with the Java regex/Pattern API, and I've never used the reduction capabilities of streams either. Once again I took the approach of making a general enough solution that I will be able to re-purpose my package for the android application, however this time I took a more straightforward approach by returning the list and allowing the package user to manipulate it as they please.
 
 One thing I found during development is that it is considerably faster to use regex to match the words themselves (my current solution), rather than their delimiters (my initial solution). While this arguable produces less true results (e.g. hyphenated words will not be treated thusly), it simplifies the sanitation process considerably (lowercasing, removing trailing punctuation, etc.) and avoids multiple, costly passes over the dataset as different map and filter operations are applied for sanitization. You could, of course, apply one very good map or filter that does the sanitation in a single step, but by grabbing the words directly, you can avoid even that single extra pass, speeding up the output considerably.
+
+\section{Task 4}
 \end{document}
