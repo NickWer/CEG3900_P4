@@ -31,15 +31,16 @@
 		\caption{Some text in the log textbox (It is multiline)}
 	\end{figure}
 	\begin{figure}[ht]
-	\includegraphics[width=3in]{img/t2s3.png}
-	\centering
-	\caption{Example output from a nonsense input}
+		\includegraphics[width=3in]{img/t2s3.png}
+		\centering
+		\caption{Example output from a nonsense input}
 	\end{figure}
 	\begin{figure}[ht]
-	\includegraphics[width=3in]{img/t2s4.png}
-	\centering
-	\caption{Example output from the provided input. You can kind of see that the lower portion of text is scrollable (the scrollbar is visible), but it's hard to capture that in a screenshot.}
+		\includegraphics[width=3in]{img/t2s4.png}
+		\centering
+		\caption{Example output from the provided input. You can kind of see that the lower portion of text is scrollable (the scrollbar is visible), but it's hard to capture that in a screenshot.}
 	\end{figure}
+	
 	\section{Task 3}
 	The source for this program is available in the Task 3 folder. I used the following input to test my program:
 \begin{verbatim}
@@ -74,4 +75,28 @@ The experience of developing this was overall not very different from Task 1, th
 One thing I found during development is that it is considerably faster to use regex to match the words themselves (my current solution), rather than their delimiters (my initial solution). While this arguable produces less true results (e.g. hyphenated words will not be treated thusly), it simplifies the sanitation process considerably (lowercasing, removing trailing punctuation, etc.) and avoids multiple, costly passes over the dataset as different map and filter operations are applied for sanitization. You could, of course, apply one very good map or filter that does the sanitation in a single step, but by grabbing the words directly, you can avoid even that single extra pass, speeding up the output considerably.
 
 \section{Task 4}
+Screenshots of my application running are shown in figures 5-8.  My sample input is the same as before. The output is as shown in figure 8. 
+
+This android application went much faster than the previous. IT seems to work correctly though I have not tested it extensively. One issue I did encounter is that, because Task 3 requires network IO, I found myself forced to background the task. This was actually much easier than I anticipated, thankfully. Other than that, the process was relatively quick and painless compared to most of my previous android experiences. Perhaps, just maybe, I'm getting the hang of it.
+
+	\begin{figure}[ht]
+		\includegraphics[width=3in]{img/t4s1.png}
+		\centering
+		\caption{Home screen}
+	\end{figure}
+	\begin{figure}[ht]
+		\includegraphics[width=3in]{img/t4s2.png}
+		\centering
+		\caption{Showing the placeholder and number input}
+	\end{figure}
+	\begin{figure}[ht]
+		\includegraphics[width=3in]{img/t4s3.png}
+		\centering
+		\caption{Simple information displayed while the user waits}
+	\end{figure}
+	\begin{figure}[ht]
+		\includegraphics[width=3in]{img/t4s4.png}
+		\centering
+		\caption{The result, which on my phone took 10+ seconds to appear.}
+	\end{figure}
 \end{document}
