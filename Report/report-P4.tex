@@ -7,16 +7,18 @@
 \date{\today}
 \begin{document}
 	\maketitle
+	\section{Preamble}
+	The code and other files, in addition to being included with the pilot submission as required, will be available at \url{https://github.com/NickWer/CEG3900_P4} on Thursday, March 16th.
 	\section{Task 1}
 	My program works well, with no bugs or crashes that I am aware of. To test, I made the file many times larger (copy and pasted the original 240k log until it was 300MB) and it still ran well. Additionally, using a script called memusg from \url{https://gist.github.com/netj/526585}\footnote{This script is included in my repository as a submodule.}, I was able to verify that the memory consumption of my implementation did not noticeably grow with the size of the input.
 	
 	I developed this program by creating a package for parsing, which will hopefully be trivial enough to modify for the later parts of the assignment. Using streams and regex it searches each line of the log against the regex string and extracts the IP address if possible. I think the callback that I put in place will be valuable for the later portions, and what code there is will be simple to modify.
 	\section{Task 2}
-	See figures 1-4 for the screenshots of this application running.
+	See figures 1-4 for the screenshots of this application running. Note that they may end up in funny places throughout the document, because that's what \LaTeX\ likes to do.
 	
 	My application works well enough. One thing that could be improved is that, when clicking either processes button, the calculation is run on the UI thread and so the application hangs while it processes the log.
 	
-	Building this application wasn't too terrible but also certainly came with many minor issues. Passing data between activities is surprisingly difficult if you actually want to do it the right way, and need to send more than a simple integer or string. I decided that this wasn't worth figuring out given my somewhat limited time and the simplicity of the application, so I just used a global static class to hold the Stream<> I wanted to pass.
+	Building this application wasn't too terrible but also certainly came with many minor issues. Passing data between activities is surprisingly difficult if you actually want to do it the right way, and need to send more than a simple integer or string. I decided that this wasn't worth figuring out given my somewhat limited time and the simplicity of the application, so I just used a global static class to hold the Stream object I wanted to pass.
 	
 	\begin{figure}[ht]
 		\includegraphics[width=3in]{img/t2s1.png}
