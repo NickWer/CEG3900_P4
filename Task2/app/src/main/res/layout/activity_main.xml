@@ -14,7 +14,6 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/btnProcessFile"
         android:layout_alignParentStart="true">
 
         <Button
@@ -23,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/btnProcessText"
             android:layout_alignParentEnd="true"
-            android:id="@+id/button4"
+            android:id="@+id/btnProcessFile"
             android:layout_alignParentStart="true"
             android:onClick="processFile_onClick"/>
 
@@ -31,7 +30,7 @@
             android:text="Process Text Below"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnProcessTextbox"
+            android:id="@+id/btnProcessText"
             android:layout_below="@+id/txtEditableLog"
             android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
@@ -46,6 +45,6 @@
             android:layout_alignParentStart="true"
             android:id="@+id/editText2"
             android:layout_alignParentEnd="true"
-            android:hint="Paste your log here" />
+            android:hint="(Optional) Paste your log here" />
     </LinearLayout>
 </RelativeLayout>
