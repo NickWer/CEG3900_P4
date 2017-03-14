@@ -3,7 +3,7 @@
 \usepackage{graphicx}
 
 \title{P4 Submission}
-\author{Nick Werle}
+\author{Nicholas Werle - U00764124}
 \date{\today}
 \begin{document}
 	\maketitle
@@ -11,6 +11,10 @@
 	The code and other files, in addition to being included with the pilot submission as required, will be available at \url{https://github.com/NickWer/CEG3900_P4} on Thursday, March 16th.
 	\section{Task 1}
 	My program works well, with no bugs or crashes that I am aware of. To test, I made the file many times larger (copy and pasted the original 240k log until it was 300MB) and it still ran well. Additionally, using a script called memusg from \url{https://gist.github.com/netj/526585}\footnote{This script is included in my repository as a submodule.}, I was able to verify that the memory consumption of my implementation did not noticeably grow with the size of the input.
+	
+	\textbf{Preconditions:} The filenames specified are valid and properly escaped on input. The appropriate output directories are writable.
+	
+	\textbf{Postconditions:} The provided output file (or the default one) contains a list of invalid logins
 	
 	I developed this program by creating a package for parsing, which will hopefully be trivial enough to modify for the later parts of the assignment. Using streams and regex it searches each line of the log against the regex string and extracts the IP address if possible. I think the callback that I put in place will be valuable for the later portions, and what code there is will be simple to modify.
 	\section{Task 2}
@@ -67,6 +71,10 @@ is - 9199
 i - 8946
 that - 8150
 \end{verbatim}
+
+\textbf{Preconditions:} n must be >= 0, the input files must use the English alphabet.
+
+\textbf{Postconditions:} A list of words and the tally of their frequency across ALL documents in the input file is written out.
 
 My solution works well, as best I can tell. It does not attempt to strip out html or anything similar, and so it generally assumes that input is plaintext. Additionally it will only be compatible with the standard 26/52 character English alphabet. As I understand it this solution works with ASCII as well as other UTF encodings, though I have not tested this.
 
